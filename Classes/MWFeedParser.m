@@ -658,6 +658,16 @@
                         else if ([currentPath isEqualToString:@"/feed/entry/dc:creator"]) { if (processedText.length > 0) item.author = processedText; processed = YES; }
                         else if ([currentPath isEqualToString:@"/feed/entry/published"]) { if (processedText.length > 0) item.date = [NSDate dateFromInternetDateTimeString:processedText formatHint:DateFormatHintRFC3339]; processed = YES; }
                         else if ([currentPath isEqualToString:@"/feed/entry/updated"]) { if (processedText.length > 0) item.updated = [NSDate dateFromInternetDateTimeString:processedText formatHint:DateFormatHintRFC3339]; processed = YES; }
+                        else if ([currentPath isEqualToString:@"/feed/entry/ev:startdate"]) {
+                            if (processedText.length > 0)
+                                item.startDate = [NSDate dateFromInternetDateTimeString:processedText formatHint:DateFormatHintRFC3339];
+                            processed = YES;
+                        }
+                        else if ([currentPath isEqualToString:@"/feed/entry/ev:enddate"]) {
+                            if (processedText.length > 0)
+                                item.endDate = [NSDate dateFromInternetDateTimeString:processedText formatHint:DateFormatHintRFC3339];
+                            processed = YES;
+                        }
                     }
                     
                     // Info

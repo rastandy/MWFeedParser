@@ -58,5 +58,7 @@
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *author;
 @property (nonatomic, copy) NSArray *enclosures;
+@property (nonatomic, copy) NSDate *startDate;
+@property (nonatomic, copy) NSDate *endDate;
 
 @end
